@@ -36,6 +36,11 @@ CREATE TABLE produtos (
 );
 ```
 
+### Adicioar campo/coluna em uma tabela 
+```sql
+    ALTER TABLE produtos ADD fabricantes_id INT NOT NULL AFTER preco;
+```
+
 ### Visualizar detalhes estruturais produtos
 
 ```sql
