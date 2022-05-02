@@ -37,4 +37,30 @@ INSERT INTO produtos (nome, descricao, preco, quantidade, fabricantes_id) VALUES
     ), (
         'Ipad Mini', 'Tela de 7 polegadas, processador A10, 64 GB de armazenamento, Wi-Fi e Bluetooth, acesso ao iCloud.', 4999.99, 8, 3 # Apple
     );
-```	
+```
+<hr>
+
+## Exercício
+- Insira mais 2 fabricantes: Positivo e Microsoft
+
+- Insira mais 2 produtos: 
+        - Xbox, console de ultima geração com acesso ao melhores jogos, 2999.99, 6, microsoft
+
+        - Ultabook, Equipamento processador AMD Ryzen 5 de RAM, placa de vídeo AMD Radeon RX 580, 4GB de memória RAM, tela de 10 polegadas, Windows 10, preço de 4999.99, 7, positivo;
+
+
+### FABRICANTES
+```sql
+    INSERT INTO fabricantes (nome) VALUES ('Microsoft'), ('Positivo');
+```
+
+### PRODUTOS
+```sql
+    INSERT INTO produtos (nome, descricao, preco, quantidade, fabricantes_id) VALUES(
+            'Xbox','Console de ultima geração com acesso ao melhores jogos', 2999.99, 6, 7
+        ),
+        (
+            'Ultabook', 'Equipamento processador AMD Ryzen 5 de RAM, placa de vídeo AMD Radeon RX 580, 4GB de memória RAM, tela de 10 polegadas, Windows 10', 4999.99, 7,8
+        ); 
+```
+<hr>
