@@ -163,3 +163,24 @@ DELETE FROM fabricantes WHERE id = 4; -- LG
 
 DELETE FROM produtos WHERE preco <= 2000 AND preco > 500; # Excluindo produtos com preço entre 500 e 2000
 ```	
+
+<hr>
+
+-- Exercício
+
+Filmes:
+
+TitulodoFilme
+AnodeLancamento
+generos_id
+ID
+
+generos
+
+INSERT INTO filmes (TitulodoFilme, AnodeLancamento, generos_id) VALUES(
+            'Sonic - O Filme',13-02-2020, 1
+        );
+
+
+
+INSERT INTO generos (generos) VALUES ('Drama/Romantico');
