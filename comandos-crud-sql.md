@@ -147,5 +147,19 @@ SELECT fabricantes_id, SUM(preco) AS "Total" FROM produtos GROUP BY fabricantes_
 ### Update (Sempre colocar WHERE)
 
 ```sql
-UPDATE fabricantes SET nome = 'Microsoft Brasil' WHERE id = 7; # 
+UPDATE fabricantes SET nome = 'Microsoft Brasil' WHERE id = 7; 
+```	
+-- mudando valores de uma coluna
+```sql	
+UPDATE produtos SET  preco = 6999 WHERE id = 7;
+
+UPDATE produtos SET  quantidade = 15 WHERE fabricantes_id = 1 OR fabricantes_id = 3; 
+```	
+
+### Excluir dados de uma tabela
+
+```sql
+DELETE FROM fabricantes WHERE id = 4; -- LG
+
+DELETE FROM produtos WHERE preco <= 2000 AND preco > 500; # Excluindo produtos com preço entre 500 e 2000
 ```	
