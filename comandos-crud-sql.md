@@ -99,4 +99,45 @@ WHERE fabricantes_id != 3; # Não é da fabricante apple
 -- SELECT nome, preco, quantidade FROM produtos
 -- WHERE fabricantes_id NOT IN (3, 7);
 ```	
+<hr>
 
+### Filtros
+
+```sql	
+SELECT nome, preco FROM produtos ORDER BY preco; # Ordenação por preço menor para o maior  
+SELECT nome, preco FROM produtos ORDER BY preco DESC; # Ordenação por preço decrescente - maior para o menor
+
+SELECT nome, descricao FROM produtos WHERE descricao LIKE '%processador%'; # Busca por palavra chave
+```
+### Operações e Funções de agregação
+
+```sql	
+SELECT SUM(preco) FROM produtos; # Somar todos os preços - Geral
+
+SELECT SUM(preco) AS TOTAL FROM produtos; # Somar todos os preços e nomenar como TOTAL (nome da coluna)
+
+SELECT SUM(quantidade) AS "Quantidade em Estoque" FROM produtos; # Somar todas as quantidades e nomenar como "Quantidade em Estoque"
+
+SELECT SUM(quantidade) AS "Quantidade em Estoque Apple" FROM produtos WHERE fabricantes_id = 3; # Somar todas as quantidades de produtos da fabricante apple e nomenar como "Quantidade em Estoque"
+
+-- AVG (Avarage)
+SELECT AVG(preco) AS "Média dos Preços" FROM produtos; # Média dos preços
+
+SELECT ROUND(AVG(preco), 2) AS "Média dos Preços" FROM produtos; # Média dos preços com 2 casas decimais
+
+-- COUNT (Contagem)
+SELECT COUNT(id) AS "Quantidade de produtos" FROM produtos; # Quantidade de produtos
+
+SELECT COUNT(fabricantes_id) AS "Quantidade de Fabricantes" FROM produtos;
+
+-- DISTINCT é um comando para evitar a duplicidade na consulta de produtos
+SELECT COUNT(DISTINCT fabricantes_id) AS "Quantidade de Fabricantes" FROM produtos;
+
+SELECT nome, preco, quantidade, (preco * quantidade) AS "TOTAL" FROM produtos; # Total de cada produto
+```	
+
+### Agrupamento
+
+```sql
+SELECT fabricante_id, SUM(preco) AS "Total" FROM produtos;
+GROUP BY fabricantes_id; # Agrupa por fabricante
