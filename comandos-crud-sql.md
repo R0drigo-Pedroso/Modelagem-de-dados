@@ -142,4 +142,10 @@ SELECT nome, preco, quantidade, (preco * quantidade) AS "TOTAL" FROM produtos; #
 SELECT fabricantes_id, SUM(preco) AS "Total" FROM produtos GROUP BY fabricantes_id; # Agrupa por fabricante
 
 -- GRUP BY permite segmentaçã reaultado da consulta.
--- nese cassa, somamo todos os preços e segmentamos / agrupamento por cada fabricante
+-- nese cassa, somamo todos os preços e segmentamos / agrupamento por cada fabricante`
+```	
+### Update (Sempre colocar WHERE)
+
+```sql
+UPDATE fabricantes SET nome = 'Microsoft Brasil' WHERE id = 7; # 
+```	
