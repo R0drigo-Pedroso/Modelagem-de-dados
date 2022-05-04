@@ -139,5 +139,7 @@ SELECT nome, preco, quantidade, (preco * quantidade) AS "TOTAL" FROM produtos; #
 ### Agrupamento
 
 ```sql
-SELECT fabricante_id, SUM(preco) AS "Total" FROM produtos;
-GROUP BY fabricantes_id; # Agrupa por fabricante
+SELECT fabricantes_id, SUM(preco) AS "Total" FROM produtos GROUP BY fabricantes_id; # Agrupa por fabricante
+
+-- GRUP BY permite segmentaçã reaultado da consulta.
+-- nese cassa, somamo todos os preços e segmentamos / agrupamento por cada fabricante
