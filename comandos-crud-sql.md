@@ -231,3 +231,13 @@ SELECT
     GROUP BY Fabricantes -- fabricantes.nome
     ORDER BY "Qtd de produtos";
 ```
+<!-- Usando RIGHT - trás registros mesmo sem produtos ou LEFT -->
+```sql
+    SELECT
+        fabricantes.nome AS Fabricantes,
+        COUNT(produtos.fabricantes_id) AS "Qtd de produtos"
+    FROM produtos LEFT JOIN fabricantes
+    ON produtos.fabricantes_id = fabricantes.id
+    GROUP BY Fabricantes -- fabricantes.nome
+    ORDER BY "Qtd de produtos";
+```
