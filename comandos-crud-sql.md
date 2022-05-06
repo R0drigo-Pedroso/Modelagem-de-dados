@@ -184,3 +184,50 @@ INSERT INTO filmes (TitulodoFilme, AnodeLancamento, generos_id) VALUES(
 
 
 INSERT INTO generos (generos) VALUES ('Drama/Romantico');
+<hr>
+
+
+### Consultas em duas ou mais tabelas (JUNÇÃO)
+
+```sql
+-- nomeda tabela, nome da coluna, nome da tabela, nome da coluna
+    SELECT produtos.nome, fabricantes.nome
+    FROM produtos INNER JOIN fabricantes
+    ON produtos.fabricantes_id = fabricantes.id;
+```	
+
+<!-- aplicação mais detalhada -->
+<!-- nome do produto e do frabricante ordenados pelo nome do produto -->
+```sql	
+SELECT
+    produtos.nome AS Produto,
+    fabricantes.nome AS Fabricante
+
+    FROM produtos INNER JOIN fabricantes
+    ON produtos.fabricantes_id = fabricantes.id
+    
+    ORDER BY produtos.nome;
+```
+
+<!-- Fabricantes, soma dos preços e quantidade de predutos -->
+```sql
+    SELECT
+        fabricantes.nome AS Fabricantes,
+        SUM(produtos.preco) AS Total, -- SUM é soma
+        COUNT(produtos.fabricantes_id) AS "Qtd de produtos"
+    FROM produtos INNER JOIN fabricantes
+    ON produtos.fabricantes_id = fabricantes.id
+    GROUP BY Fabricantes -- fabricantes.nome
+    ORDER BY Total;
+```
+
+<!-- Trazer a quantidade de produtos de cada fabricante -->
+```sql
+    SELECT
+        fabricantes.nome AS Fabricantes,
+        COUNT(produtos.fabricantes_id) AS "Qtd de produtos"
+    FROM produtos INNER JOIN fabricantes
+    ON produtos.fabricantes_id = fabricantes.id
+    GROUP BY Fabricantes -- fabricantes.nome
+    ORDER BY "Qtd de produtos";
+```
